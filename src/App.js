@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React with Docker and K8s
+          Learn React with Docker and K8s and that is good.
         </a>
       </header>
     </div>
