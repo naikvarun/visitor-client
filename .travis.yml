@@ -9,3 +9,15 @@ before_install:
   - docker build -t naikvarun/visitor-client -f Dockerfile.dev .
 script:
   - docker run -e CI=true naikvarun/visitor-client yarn test
+
+deploy:
+  provider: elastikbeanstalk
+  region: "us-east-2"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  app: "visitor-client"
+  env: "VisitorClient-env"
+  bucket_name: "elasticbeanstalk-us-east-2-803550409432"
+  bucket_path: "visitor-client"
+  on:
+    branch: master
